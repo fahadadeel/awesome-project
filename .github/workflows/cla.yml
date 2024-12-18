@@ -1,0 +1,17 @@
+name: CLA Check
+
+on:
+  pull_request_target: # Runs on PRs created or updated
+    types: [opened, synchronize, reopened, edited]
+
+jobs:
+  cla-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: CLA Assistant Lite
+        uses: contributor-assistant/github-action@v2.6.1
+        with:
+          path-to-signatures: '.github/cla-signatures.json' # File to store signed CLAs
+          path-to-document: '.github/cla.md'               # Path to CLA document
+          allowlist: 'dependabot[bot],github-actions[bot]' # Optional: exclude bots
+          branch: 'main'                                  # Default branch
