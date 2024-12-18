@@ -1,4 +1,5 @@
-﻿/// <summary>
+﻿using System.Linq;
+/// <summary>
 /// Creates a new Word Document with structured content using 
 /// <a href="https://www.nuget.org/packages/FileFormat.Words">FileFormat.Words</a>.
 /// Generates paragraphs with heading styles defined by the Word document template.
